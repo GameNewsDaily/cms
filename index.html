@@ -4,53 +4,75 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GameNewsDaily 每日遊戲新聞</title>
-    <meta name="description" content="GameNewsDaily 每日遊戲新聞提供最新、最精彩的遊戲消息、評測與心得，讓您每天掌握全球遊戲動態。" />
-    <!-- Google AdSense 代碼範例：請將 ca-pub-xxxxxxxxxxxx 替換為您自己的 Publisher ID -->
-    <!--
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script>
-    -->
+    <title>GameNewsDaily 每日遊戲新聞 – 全新設計示例</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>GameNewsDaily 每日遊戲新聞</h1>
-      <p>集合熱門遊戲資訊、評測與心得，讓你不錯過任何一則遊戲新聞。</p>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">GameNewsDaily 每日遊戲新聞</h1>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="#">首頁</a></li>
+            <li><a href="#category-rpg">RPG</a></li>
+            <li><a href="#category-action">動作冒險</a></li>
+            <li><a href="#category-strategy">策略</a></li>
+            <li><a href="#category-shooter">射擊</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <main>
-      <section class="post-list">
-        <!-- 首頁文章列表；每則文章包含標題、日期、簡介與連結 -->
-        <article>
-          <h2><a href="posts/post-2025-07-27-baldurs-gate-3.html">《博德之門3》：瓦羅技能與招式指南</a></h2>
-          <div class="meta">2025-07-27  |  RPG</div>
-          <p>瓦羅是《博德之門3》中頂替能力強大的角色。他能替隊友承受傷害並具備特殊魔法攻擊，本篇詳細介紹其技能和使用心得。</p>
-          <a class="read-more" href="posts/post-2025-07-27-baldurs-gate-3.html">閱讀全文</a>
-        </article>
-        <article>
-          <h2><a href="posts/post-2025-07-26-game-review.html">《浪人崛起》遊戲評測</a></h2>
-          <div class="meta">2025-07-26  |  動作冒險</div>
-          <p>《浪人崛起》是一款讓人期待已久的武士風格動作冒險遊戲。本篇將深入分析遊戲的畫面、戰鬥系統與整體遊玩體驗。</p>
-          <a class="read-more" href="posts/post-2025-07-26-game-review.html">閱讀全文</a>
-        </article>
-        <!-- 您可以在這裡新增更多文章條目 -->
-      </section>
-      <aside>
-        <h3>分類</h3>
-        <ul>
-          <li><a href="#">RPG</a></li>
-          <li><a href="#">動作冒險</a></li>
-          <li><a href="#">策略</a></li>
-          <li><a href="#">射擊</a></li>
-        </ul>
-        <h3>關於本站</h3>
-        <p>
-          GameNewsDaily 由遊戲愛好者創建，目的是分享遊戲世界的最新動態、深度評析與玩後心得。這裡不僅有新聞，還有對遊戲發展趨勢的觀察與討論。
-        </p>
+
+    <!-- Hero section with featured post -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="hero-title">最新焦點：瓦羅技與魔法招式指南</h2>
+          <p class="hero-excerpt">
+            探索《博德之門3》中瓦羅角色的特殊能力與招式，掌握魔法攻擊技巧，提升戰鬥生存率。
+          </p>
+          <a href="#" class="btn btn-primary">閱讀全文</a>
+        </div>
+      </div>
+    </section>
+
+    <main class="container content-wrapper">
+      <div class="posts">
+        <!-- Posts will be injected here by JavaScript -->
+      </div>
+      <aside class="sidebar">
+        <section class="widget widget-popular">
+          <h3>熱門文章</h3>
+          <ul id="popular-posts-list">
+            <!-- Popular posts injected by JavaScript -->
+          </ul>
+        </section>
+        <section class="widget widget-categories">
+          <h3>分類</h3>
+          <ul>
+            <li><a href="#category-rpg">RPG</a></li>
+            <li><a href="#category-action">動作冒險</a></li>
+            <li><a href="#category-strategy">策略</a></li>
+            <li><a href="#category-shooter">射擊</a></li>
+          </ul>
+        </section>
+        <section class="widget widget-ad">
+          <h3>廣告</h3>
+          <!-- Google AdSense placeholder -->
+          <div class="ad-placeholder">此處可插入 Google AdSense 廣告程式碼</div>
+        </section>
       </aside>
     </main>
-    <footer>
-      <p>&copy; 2025 GameNewsDaily. 保留所有權利。</p>
-      <p class="credit">本站內容僅供分享，如有問題請聯絡 gamenews_daily。</p>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          GameNewsDaily 由遊戲愛好者創建，目的是分享遊戲世界的最新動態、深度評析與玩家心得，歡迎加入我們的討論。
+        </p>
+        <p>&copy; 2025 GameNewsDaily. 保留所有權利。</p>
+      </div>
     </footer>
+
+    <script src="scripts.js"></script>
   </body>
 </html>

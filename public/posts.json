@@ -1,0 +1,29 @@
+[
+  {
+    "title": "《博德之門3》：瓦羅技能與招式指南",
+    "slug": "baldurs-gate-3-varric-guide",
+    "date": "2025-07-27",
+    "category": "RPG",
+    "excerpt": "瓦羅是《博德之門3》中擁有能力強大的角色。他能替隊友承受受傷害並具備特殊魔法攻擊，本文詳述介紹其技能和使用心得。",
+    "image": "https://picsum.photos/600/400?gaming=1",
+    "popular": true
+  },
+  {
+    "title": "《浪人崛起》遊戲評測",
+    "slug": "ronin-rise-review",
+    "date": "2025-07-26",
+    "category": "動作冒險",
+    "excerpt": "《浪人崛起》是一款讓人期待已久的武士風格動作冒險遊戲。本篇將深入分析遊戲的畫面、戰鬥系統與整體體驗。",
+    "image": "https://picsum.photos/600/400?gaming=2",
+    "popular": false
+  },
+  {
+    "title": "《策略王者》發售日公開，預購開始",
+    "slug": "strategy-king-release-date",
+    "date": "2025-07-24",
+    "category": "策略",
+    "excerpt": "《策略王者》終於公布發售日期與預購資訊，本作以宏大的世界觀與深度策略玩法讓玩家期待不已。",
+    "image": "https://picsum.photos/600/400?gaming=3",
+    "popular": true
+  }
+]
