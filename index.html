@@ -3,17 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <title>Game News Daily</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      body { font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif; background: #f7f7fa; margin: 0; }
+      header { background: #27294c; color: #fff; padding: 40px 0 20px 0; text-align: center; }
+      h1 { font-size: 2.5em; margin: 0 0 0.2em 0;}
+      p { color: #555; }
+      a.btn { display: inline-block; margin: 20px 0; padding: 12px 24px; background: #00aaff; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;}
+      .post-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin: 40px 0;}
+      .post-card { background: #fff; border-radius: 18px; box-shadow: 0 6px 24px #0002; width: 350px; max-width: 95vw; padding: 0 0 30px 0; overflow: hidden; text-align: left; }
+      .post-card img { width: 100%; height: 240px; object-fit: cover; background: #eee;}
+      .post-card h2 { font-size: 1.2em; margin: 18px 24px 0 24px;}
+      .post-card p { margin: 16px 24px 0 24px;}
+      .post-card a { color: #222;}
+      .post-card a:hover { text-decoration: underline; }
+      footer { background: #ececf7; color: #888; text-align: center; padding: 30px 0 24px 0; margin-top: 48px;}
+    </style>
   </head>
   <body>
-    <h1>Game News Daily</h1>
-    <p>掌握遊戲產業最新消息，立即發佈及管理您的文章</p>
-    <a href="/admin">登入 CMS / 發佈文章</a>
+    <header>
+      <h1>Game News Daily</h1>
+      <p>掌握遊戲產業最新消息，立即發佈及管理您的文章</p>
+      <a class="btn" href="/admin/">登入 CMS / 發佈文章</a>
+    </header>
 
-    <!-- 在這裡加入自動載入文章的區域（之後由 JavaScript 或 CMS 處理） -->
+    <div class="post-list" id="posts"></div>
 
     <footer>
       <p>© 2025 Game News Daily – Powered by Decap CMS</p>
     </footer>
+
+    <script>
+      // 👉 將這裡的清單改為你有的文章檔名（posts/目錄下的 .html），可自行增刪
+      const postList = [
+        "sample-post1.html",
+        "sample-post2.html"
+        // 例子：如你有更多文章，直接加："20250731-demo.html"
+      ];
+
+      const postsDiv = document.getElementById("posts");
+
+      postList.reverse().forEach(filename => {
+        fetch(`/posts/${filename}`)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+            const title = doc.querySelector("h1")?.textContent || "(無標題)";
+            const img = doc.querySelector("img")?.getAttribute("src") || "assets/images/uploads/sample.png";
+            const summary = doc.querySelector("p")?.textContent || "";
+            const url = "/posts/" + filename;
+
+            const card = document.createElement("div");
+            card.className = "post-card";
+            card.innerHTML = `
+              <a href="${url}">
+                <img src="${img}" alt="">
+                <h2>${title}</h2>
+                <p>${summary}</p>
+              </a>
+            `;
+            postsDiv.appendChild(card);
+          });
+      });
+    </script>
   </body>
 </html>
