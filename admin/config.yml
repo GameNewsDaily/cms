@@ -1,0 +1,36 @@
+backend:
+  # 使用 git-gateway 以透過 Netlify 身分驗證與 Git 儲存庫互動
+  name: git-gateway
+  branch: main
+
+# 啟用本地後端可在本機端開發時直接寫入儲存庫
+local_backend: true
+
+# 媒體檔案儲存路徑。
+# media_folder 指向儲存上傳檔案的資料夾位置（在儲存庫內）。
+media_folder: "assets/images/uploads"
+# public_folder 是網站中存取媒體檔案的路徑。
+public_folder: "/assets/images/uploads"
+
+collections:
+  # 定義文章集合
+  - name: "posts"
+    label: "文章"
+    label_singular: "文章"
+    description: "管理遊戲新聞文章"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    # 使用 YAML frontmatter 格式，並指定 HTML 註解作為分隔符號，以便於 HTML 檔案內包裹 metadata
+    format: yaml-frontmatter
+    frontmatter_delimiter: ["<!--", "-->"]
+    preview_path: "posts/{{slug}}.html"
+    # 在摘要列表中顯示的預設標題欄位
+    summary: "{{title}}"
+    fields:
+      - { label: "標題", name: "title", widget: "string" }
+      - { label: "封面圖片", name: "featured_image", widget: "image", required: false, hint: "上傳文章封面圖片" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "文章網址路徑（不含副檔名）" }
+      - { label: "日期", name: "date", widget: "datetime", required: false, format: "YYYY-MM-DD" }
+      - { label: "內文", name: "body", widget: "markdown", hint: "撰寫您的文章內容，可使用 Markdown 語法" }

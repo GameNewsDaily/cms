@@ -1,0 +1,120 @@
+/*
+ * 基本樣式表，適用於 Game News Daily 部落格。
+ * 此檔案定義了頁面排版、色系與文章列表外觀。
+ */
+
+/* 重置與基礎設定 */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+}
+
+/* 標頭區：包含標題、敘述及導覽連結 */
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.hero a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+.hero a:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* 文章列表區域 */
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.posts article {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 320px;
+  transition: transform 0.1s ease-in-out;
+}
+.posts article:hover {
+  transform: translateY(-3px);
+}
+.posts article img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.posts article h2 {
+  font-size: 1.5rem;
+  margin: 0.75rem 1rem 0.25rem;
+}
+.posts article p {
+  margin: 0 1rem 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 單篇文章樣式 */
+.post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.post h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.post img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+.post .date {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.post #rendered-content {
+  line-height: 1.8;
+}
+
+/* 頁尾樣式 */
+footer {
+  background-color: #f0f0f0;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 4rem;
+}

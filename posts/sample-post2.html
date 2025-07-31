@@ -1,0 +1,44 @@
+<!--
+title: 遊戲新聞範例文章二
+featured_image: /assets/images/uploads/sample.png
+slug: sample-post2
+date: 2025-07-31
+-->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遊戲新聞範例文章二</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <article class="post">
+    <h1>遊戲新聞範例文章二</h1>
+    <p class="date">發佈日期：2025-07-31</p>
+    <img src="../assets/images/uploads/sample.png" alt="封面圖片">
+    <div id="content" style="display:none;">
+這是第二篇示範文章的內容。透過 Decap CMS，您可以輕鬆管理所有 HTML 文章。
+
+我們同樣提供 Markdown 語法支援：\
+
+1. 支援有序列表\
+2. 可以包含程式碼塊：\
+
+```javascript
+console.log('您好，世界！');
+```
+
+還可以新增引用：\
+
+> “遊戲不僅是娛樂，更是藝術。”
+    </div>
+    <div id="rendered-content"></div>
+  </article>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const markdown2 = document.getElementById('content').innerText;
+    document.getElementById('rendered-content').innerHTML = marked.parse(markdown2);
+  </script>
+</body>
+</html>
