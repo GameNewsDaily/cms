@@ -2,69 +2,55 @@
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
-    <title>Game News Daily</title>
-    <style>
-      body { font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif; background: #f7f7fa; margin: 0; }
-      header { background: #27294c; color: #fff; padding: 40px 0 20px 0; text-align: center; }
-      h1 { font-size: 2.5em; margin: 0 0 0.2em 0;}
-      p { color: #555; }
-      a.btn { display: inline-block; margin: 20px 0; padding: 12px 24px; background: #00aaff; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;}
-      .post-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin: 40px 0;}
-      .post-card { background: #fff; border-radius: 18px; box-shadow: 0 6px 24px #0002; width: 350px; max-width: 95vw; padding: 0 0 30px 0; overflow: hidden; text-align: left; }
-      .post-card img { width: 100%; height: 240px; object-fit: cover; background: #eee;}
-      .post-card h2 { font-size: 1.2em; margin: 18px 24px 0 24px;}
-      .post-card p { margin: 16px 24px 0 24px;}
-      .post-card a { color: #222;}
-      .post-card a:hover { text-decoration: underline; }
-      footer { background: #ececf7; color: #888; text-align: center; padding: 30px 0 24px 0; margin-top: 48px;}
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameNewsDaily 每日遊戲新聞</title>
+    <meta name="description" content="GameNewsDaily 每日遊戲新聞提供最新、最精彩的遊戲消息、評測與心得，讓您每天掌握全球遊戲動態。" />
+    <!-- Google AdSense 代碼範例：請將 ca-pub-xxxxxxxxxxxx 替換為您自己的 Publisher ID -->
+    <!--
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script>
+    -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>Game News Daily</h1>
-      <p>掌握遊戲產業最新消息，立即發佈及管理您的文章</p>
-      <a class="btn" href="/admin/">登入 CMS / 發佈文章</a>
+      <h1>GameNewsDaily 每日遊戲新聞</h1>
+      <p>集合熱門遊戲資訊、評測與心得，讓你不錯過任何一則遊戲新聞。</p>
     </header>
-
-    <div class="post-list" id="posts"></div>
-
+    <main>
+      <section class="post-list">
+        <!-- 首頁文章列表；每則文章包含標題、日期、簡介與連結 -->
+        <article>
+          <h2><a href="posts/post-2025-07-27-baldurs-gate-3.html">《博德之門3》：瓦羅技能與招式指南</a></h2>
+          <div class="meta">2025-07-27  |  RPG</div>
+          <p>瓦羅是《博德之門3》中頂替能力強大的角色。他能替隊友承受傷害並具備特殊魔法攻擊，本篇詳細介紹其技能和使用心得。</p>
+          <a class="read-more" href="posts/post-2025-07-27-baldurs-gate-3.html">閱讀全文</a>
+        </article>
+        <article>
+          <h2><a href="posts/post-2025-07-26-game-review.html">《浪人崛起》遊戲評測</a></h2>
+          <div class="meta">2025-07-26  |  動作冒險</div>
+          <p>《浪人崛起》是一款讓人期待已久的武士風格動作冒險遊戲。本篇將深入分析遊戲的畫面、戰鬥系統與整體遊玩體驗。</p>
+          <a class="read-more" href="posts/post-2025-07-26-game-review.html">閱讀全文</a>
+        </article>
+        <!-- 您可以在這裡新增更多文章條目 -->
+      </section>
+      <aside>
+        <h3>分類</h3>
+        <ul>
+          <li><a href="#">RPG</a></li>
+          <li><a href="#">動作冒險</a></li>
+          <li><a href="#">策略</a></li>
+          <li><a href="#">射擊</a></li>
+        </ul>
+        <h3>關於本站</h3>
+        <p>
+          GameNewsDaily 由遊戲愛好者創建，目的是分享遊戲世界的最新動態、深度評析與玩後心得。這裡不僅有新聞，還有對遊戲發展趨勢的觀察與討論。
+        </p>
+      </aside>
+    </main>
     <footer>
-      <p>© 2025 Game News Daily – Powered by Decap CMS</p>
+      <p>&copy; 2025 GameNewsDaily. 保留所有權利。</p>
+      <p class="credit">本站內容僅供分享，如有問題請聯絡 gamenews_daily。</p>
     </footer>
-
-    <script>
-      // 👉 將這裡的清單改為你有的文章檔名（posts/目錄下的 .html），可自行增刪
-      const postList = [
-        "sample-post1.html",
-        "sample-post2.html"
-        // 例子：如你有更多文章，直接加："20250731-demo.html"
-      ];
-
-      const postsDiv = document.getElementById("posts");
-
-      postList.reverse().forEach(filename => {
-        fetch(`/posts/${filename}`)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, "text/html");
-            const title = doc.querySelector("h1")?.textContent || "(無標題)";
-            const img = doc.querySelector("img")?.getAttribute("src") || "assets/images/uploads/sample.png";
-            const summary = doc.querySelector("p")?.textContent || "";
-            const url = "/posts/" + filename;
-
-            const card = document.createElement("div");
-            card.className = "post-card";
-            card.innerHTML = `
-              <a href="${url}">
-                <img src="${img}" alt="">
-                <h2>${title}</h2>
-                <p>${summary}</p>
-              </a>
-            `;
-            postsDiv.appendChild(card);
-          });
-      });
-    </script>
   </body>
 </html>
